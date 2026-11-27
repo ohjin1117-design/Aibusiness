@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>집톡! — 우리들의 자취 이야기</title>
+<style>
+:root{--bg:#fbf8f0;--white:#fffdf9;--ink:#382d24;--muted:#8b7b6c;--line:#eee6d9;--yellow:#ffe598;--butter:#fff0bc;--coral:#ee805f;--mint:#dcebd5;--green:#4f8053;--shadow:0 6px 24px #62431a08;--radius:18px}
+*{box-sizing:border-box}[hidden]{display:none!important}body{margin:0;background:var(--bg);color:var(--ink);font-family:Pretendard,"Noto Sans KR","Noto Sans CJK KR","Malgun Gothic",Arial,sans-serif;font-size:14px;line-height:1.55}button,input,select,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #c1a249;outline-offset:2px}button{border:0;background:none;color:inherit}a{color:inherit;text-decoration:none}svg{vertical-align:middle}svg.icon{width:19px;height:19px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.header{height:78px;background:#fffdf8f7;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;backdrop-filter:blur(14px)}.header-inner{max-width:1250px;margin:auto;display:flex;align-items:center;gap:38px;height:100%;padding:0 24px}.brand{display:flex;align-items:center;gap:9px;flex-shrink:0;cursor:pointer}.brand-mark{display:flex;align-items:center;justify-content:center;background:var(--yellow);border:1.5px solid #ddbd67;border-radius:13px;width:40px;height:40px}.brand-name{font-size:29px;letter-spacing:-2px;font-weight:1000;color:#513721;line-height:1}.brand-sub{font-size:9px;letter-spacing:2.1px;color:#a48c68;font-weight:800;margin-top:4px}.top-nav{display:flex;gap:26px;align-items:center;white-space:nowrap}.top-nav button{padding:9px 0;font-weight:750;font-size:14px;position:relative}.top-nav button.active:after{content:"";height:3px;background:var(--coral);border-radius:3px;position:absolute;bottom:0;left:0;right:0}.head-right{margin-left:auto;display:flex;align-items:center;gap:16px}.search{display:flex;align-items:center;gap:8px;background:#f6f3ed;border:1px solid #eae4d9;border-radius:24px;padding:9px 14px;min-width:210px}.search .icon{color:#8c7a64;width:17px;height:17px}.search input{background:transparent;border:0;outline:0;min-width:0;width:100%;font-size:12px}.search input:focus-visible{outline:none}.head-icon{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;color:#6b5948}.head-icon:hover{background:var(--butter)}.avatar{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#fff1bb;border:1px solid #f0df96;color:#654e34;flex-shrink:0}
+.wrap{max-width:1250px;margin:0 auto;padding:24px 24px 0}.intro{display:flex;align-items:center;justify-content:space-between;margin:0 0 12px;color:#978570;font-size:11px;letter-spacing:.08em;font-weight:700}.intro .tag{letter-spacing:0;font-size:11px;font-weight:600;padding:3px 9px;border-radius:12px;background:#f3eee3;color:#837560}.hero{min-height:246px;position:relative;overflow:hidden;isolation:isolate;border-radius:25px;background:linear-gradient(112deg,#ffefb9 0%,#ffe39a 58%,#ffdfa3 100%);display:flex;align-items:center;justify-content:space-between;box-shadow:var(--shadow);border:1px solid #f5dfa0}.hero:after{content:"";position:absolute;inset:0;z-index:-1;opacity:.12;background-image:radial-gradient(#a4793d .65px,transparent .65px);background-size:9px 9px;mask-image:linear-gradient(90deg,transparent,#000)}.hero-text{padding:32px 42px;position:relative;z-index:2;max-width:58%}.eyebrow{display:inline-flex;align-items:center;background:#ef845f;border-radius:40px;padding:4px 12px;color:#fff;font-size:10px;font-weight:800;letter-spacing:1.4px}.hero h1{margin:12px 0 10px;font-size:clamp(28px,3.5vw,45px);letter-spacing:-2.4px;line-height:1.22;font-weight:1000;color:#50341f}.hero p{margin:0 0 20px;color:#755537;font-size:14px;line-height:1.65}.hero-art{position:absolute;right:1%;bottom:-1px;width:53%;height:100%;max-width:620px;z-index:1}.primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 20px;background:#e87652;color:white;border:1px solid #df6e4b;border-radius:13px;font-weight:800;box-shadow:0 3px 0 #c9603e;transition:transform .12s,background .15s}.primary:hover{background:#dc6947;transform:translateY(-1px)}.primary:active{transform:translateY(2px);box-shadow:none}.primary .icon{height:16px;width:16px}.hero .primary{border-radius:100px}
+.layout{display:grid;grid-template-columns:182px minmax(0,1fr) 267px;gap:18px;margin-top:22px;align-items:start}.panel{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}.sidebar{padding:11px 9px;position:sticky;top:94px}.side-label{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;font-weight:800;color:#a6927b;margin:12px 12px 8px}.nav-item{display:flex;align-items:center;gap:10px;border-radius:10px;width:100%;padding:11px 12px;font-size:13px;font-weight:650;text-align:left;color:#6b5747;white-space:nowrap}.nav-item:hover{background:#f6efe2}.nav-item.active{background:#ffedb2;color:#65421e;font-weight:800}.nav-item .icon{width:17px;height:17px}.nav-item .count{margin-left:auto;font-size:10px;color:#9d7e4c}.side-divider{height:1px;background:var(--line);margin:13px 8px}.side-foot{padding:9px 12px;color:#998976;font-size:11px;line-height:1.6}.feed{min-width:0}.feed-heading{display:flex;justify-content:space-between;align-items:center;padding:0 1px 12px}.feed-heading h2{font-size:21px;line-height:1.3;margin:0;letter-spacing:-.7px}.feed-heading small{font-size:11px;color:var(--muted);display:block;margin-top:4px}.feed-heading .primary{padding:8px 14px;border-radius:10px;font-size:12px}.composer{display:flex;align-items:center;gap:10px;padding:12px;margin-bottom:12px}.composer button{background:#f9f6ef;color:#a49381;text-align:left;border:1px solid #eee8db;border-radius:22px;flex:1;padding:9px 13px;min-width:0;font-size:12px}.composer button:hover{background:#fff0bc;color:#77572b}.filters{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 11px}.chip{padding:7px 12px;border-radius:18px;font-size:11px;font-weight:700;color:#7d6957;background:#fffdf8;border:1px solid var(--line);white-space:nowrap}.chip:hover{border-color:#d9b34c}.chip.active{background:#ffe598;border-color:#f1d480;color:#50351e}.sort{margin-left:auto;display:flex;align-items:center;gap:6px;color:#877664;font-size:11px}.sort select{border:1px solid var(--line);background:#fffdf9;border-radius:9px;color:var(--ink);padding:6px 9px}.posts{display:flex;flex-direction:column;gap:10px}.post{padding:15px 16px 14px;transition:box-shadow .15s,border-color .15s}.post:hover{border-color:#e5d2a7;box-shadow:0 5px 18px #74532013}.post-head{display:flex;align-items:center;gap:8px}.small-avatar{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;flex-shrink:0}.small-avatar svg{width:19px;height:19px}.author{font-weight:750;font-size:12px}.meta{font-size:10px;color:#9d8d7e;margin-top:1px}.label{display:inline-flex;align-items:center;padding:3px 8px;font-size:10px;line-height:1.45;border-radius:8px;font-weight:800;white-space:nowrap}.label.free{background:#ffe8d8;color:#b05543}.label.q{background:#eee6fa;color:#755ca4}.label.solved{background:#e2efda;color:#4e7b48}.label.tip{background:#fff0bc;color:#866628}.status{margin-left:auto}.status.pending{background:#fff0d6;color:#ad7c2e}.status.done{background:#e2efda;color:#4f8053}.post-main{cursor:pointer;display:block;text-align:unset;padding:0;width:100%;margin-top:10px}.post-title{font-size:16px;font-weight:850;letter-spacing:-.4px;margin:0 0 5px;line-height:1.4}.post-main:hover .post-title{color:#b65a3e}.post-body{font-size:12px;color:#796957;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-wrap}.post-actions{display:flex;align-items:center;gap:15px;margin-top:12px;color:#8f7f6f;font-size:11px}.action{display:flex;align-items:center;gap:4px;padding:0;line-height:1.2}.action:hover{color:#cc694f}.action .icon{width:16px;height:16px}.action.liked{color:#d66d5b}.action.liked .icon{fill:#e99480;stroke:#d66d5b}.action.saved{color:#af8a24}.action.saved .icon{fill:#ffe598}.post-actions .bookmark{margin-left:auto}.case-summary{display:flex;align-items:center;gap:11px;background:#f0f6e9;border:1px solid #e5eddd;padding:8px 10px;border-radius:10px;margin-top:10px;font-size:11px;color:#597252;flex-wrap:wrap}.case-summary strong{color:#467344;font-size:14px}.case-summary .arrow{color:#8eac82}.empty{padding:34px;text-align:center;color:var(--muted)}
+.right{display:flex;flex-direction:column;gap:13px}.feature{padding:17px;background:linear-gradient(165deg,#e8f1df,#f1f6eb);border:1px solid #dce8d3;border-radius:19px;position:relative;overflow:hidden}.feature:before{content:"";position:absolute;width:112px;height:112px;right:-40px;top:-55px;background:#d1e4c4;border-radius:50%}.feature-kicker{font-size:12px;color:#56824c;font-weight:850}.feature h3{margin:12px 0 8px;font-size:19px;letter-spacing:-.8px;line-height:1.35}.feature p{margin:0 0 12px;font-size:12px;color:#687761}.amounts{display:grid;grid-template-columns:1fr 22px 1fr;align-items:center;gap:4px;background:#fffdf7;border-radius:12px;padding:12px 10px;border:1px solid #e1ead9}.amounts .small{font-size:10px;color:#988575;margin-bottom:4px}.amounts strong{font-size:19px;letter-spacing:-.9px;font-weight:900}.amounts .good{color:#50814e}.amounts .arrow{text-align:center;color:#82a574;font-size:20px}.full-green{display:flex;justify-content:center;align-items:center;gap:6px;width:100%;padding:10px;background:#659257;color:white;border-radius:11px;font-weight:800;font-size:12px;margin-top:13px}.full-green:hover{background:#4e8149}.right-panel{padding:16px}.right-panel h3{margin:0 0 12px;font-size:15px;letter-spacing:-.45px}.popular{display:flex;align-items:flex-start;gap:9px;padding:9px 0;text-align:left;width:100%;border-top:1px solid var(--line)}.popular:first-of-type{border-top:0}.rank{font-weight:900;font-size:12px;color:#dd8659;width:16px;flex-shrink:0}.popular .p-title{font-size:12px;font-weight:700;line-height:1.4}.popular .p-meta{font-size:10px;color:var(--muted);margin-top:3px}.popular:hover .p-title{color:#d17556}.notice{padding:15px;background:#fff5d9;border:1px solid #f0e2b5;border-radius:15px}.notice strong{font-size:13px;display:block;margin-bottom:6px}.notice p{font-size:11px;color:#8c7451;margin:0 0 8px}.notice button{font-size:11px;font-weight:800;color:#9b642e;padding:0}.footer{margin:30px 0 0;padding:20px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:10px;align-items:center;color:#9d8c7a;font-size:11px}.footer button{color:#806748;font-size:11px}.mobile-nav{display:none}
+dialog{border:none;padding:0;border-radius:22px;background:var(--white);color:var(--ink);box-shadow:0 30px 90px #382d2440;width:min(660px,calc(100% - 24px));max-height:90dvh;overflow:auto}dialog::backdrop{background:#30281f66;backdrop-filter:blur(3px)}.dialog-head{display:flex;align-items:center;justify-content:space-between;gap:10px;position:sticky;top:0;background:var(--white);border-bottom:1px solid var(--line);padding:17px 24px;z-index:2}.dialog-head h2{margin:0;font-size:20px;letter-spacing:-.6px}.close{display:grid;place-items:center;border-radius:50%;width:33px;height:33px;background:#f5eee3;color:#765f49}.dialog-body{padding:20px 24px 24px}.dialog-body h3{font-size:24px;letter-spacing:-.8px;margin:14px 0 10px}.detail-body{white-space:pre-wrap;font-size:14px;color:#645443;line-height:1.75}.field{display:grid;gap:6px;margin-bottom:14px}.field label{font-size:12px;font-weight:800;display:block;color:#6f5945}.field input:not([type=checkbox]),.field select,.field textarea{width:100%;border:1px solid #e3d7c6;border-radius:10px;background:#fff;color:var(--ink);padding:11px 12px}.field textarea{resize:vertical;min-height:110px}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field-grid .field{margin-bottom:0}.secondary{background:#fffdf9;border:1px solid #e6d8c2;border-radius:11px;padding:9px 13px;font-weight:700;color:#82674d}.secondary:hover{background:#fff0bc}.dialog-actions{display:flex;gap:9px;justify-content:flex-end;margin-top:20px}.case-fields,.detail-case{background:#f7f4e9;border:1px solid #ede2ca;border-radius:13px;padding:14px;margin:14px 0}.case-fields h4,.detail-case h4{margin:0 0 12px;font-size:14px}.case-fields .sub{color:var(--muted);font-size:11px;margin:0 0 12px}.check{display:flex;gap:8px;font-size:12px;color:#756452;align-items:flex-start;margin:12px 0 0}.check input{margin-top:4px;accent-color:#e58660}.result-form{margin-top:16px}.comment{border-top:1px solid var(--line);padding:12px 0;display:flex;gap:10px}.comment .content{min-width:0;flex:1}.comment .content p{margin:3px 0 0;color:#665645;white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}.comment-form{display:flex;align-items:stretch;gap:8px;margin-top:12px}.comment-form input{flex:1;min-width:0;border-radius:11px;background:#faf7ef;border:1px solid #e9dfd0;padding:11px}.comment-form .primary{font-size:12px;box-shadow:none;padding:9px 13px}.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,18px);background:#49372b;color:white;border-radius:100px;padding:11px 18px;box-shadow:0 8px 35px #34211133;z-index:100;opacity:0;pointer-events:none;transition:all .2s;white-space:nowrap;font-size:12px;max-width:calc(100vw - 20px)}.toast.show{opacity:1;transform:translate(-50%,0)}.kv{display:flex;justify-content:space-between;gap:15px;padding:7px 0;border-bottom:1px solid #e9e2d4;font-size:12px}.kv:last-child{border-bottom:none}.kv span{color:#897760}.kv strong{text-align:right}.small-note{font-size:11px;color:#998471;line-height:1.6;margin:9px 0}.demo-note{background:#fff2cf;color:#8a632f;padding:9px 11px;border-radius:9px;font-size:12px}
+@media(max-width:1050px){.header-inner{gap:24px}.top-nav{gap:16px}.layout{grid-template-columns:156px minmax(0,1fr) 235px;gap:12px}.search{min-width:150px}.head-right{gap:7px}.hero-text{padding:29px}.nav-item{padding:10px 8px}.right-panel,.feature{padding:14px}}
+@media(max-width:850px){.layout{grid-template-columns:150px minmax(0,1fr)}.right{display:none}.top-nav{display:none}.hero{min-height:220px}.hero-art{width:51%}.hero-text{max-width:65%}.hero h1{font-size:34px}.header{height:66px}.sidebar{top:80px}.header-inner{padding:0 16px}.wrap{padding:18px 16px 0}}
+@media(max-width:600px){.header-inner{gap:10px}.header{height:61px}.brand-name{font-size:24px}.brand-mark{width:34px;height:34px;border-radius:9px}.brand-sub{display:none}.head-right{gap:5px}.head-icon{width:28px}.head-right .avatar{width:31px;height:31px}.search{min-width:0;max-width:145px;padding:7px 9px}.search input{font-size:11px}.wrap{padding:14px 12px 68px}.intro{font-size:9px}.hero{min-height:206px;border-radius:18px}.hero-text{padding:20px 16px;max-width:70%}.hero h1{font-size:27px;letter-spacing:-1.5px;line-height:1.2}.hero p{font-size:11px;margin-bottom:13px}.hero .primary{padding:8px 12px;font-size:11px}.hero-art{width:48%;right:-8%;opacity:.95;height:80%}.eyebrow{font-size:8px;padding:3px 8px}.layout{display:block;margin-top:18px}.sidebar{display:none}.feed-heading h2{font-size:18px}.feed-heading .primary{font-size:11px}.post{padding:13px}.post-title{font-size:15px}.filters{gap:5px}.chip{padding:6px 9px}.sort{margin-left:0}.footer{display:block;line-height:1.8}.mobile-nav{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space-around;background:#fffdf9;border-top:1px solid var(--line);z-index:21;padding:9px 5px max(9px,env(safe-area-inset-bottom))}.mobile-nav button{font-size:10px;color:#8a725a;display:grid;justify-items:center;gap:4px;min-width:49px}.mobile-nav button.active{color:#c56a43;font-weight:900}.mobile-nav .icon{width:21px;height:21px}.dialog-head{padding:13px 16px}.dialog-body{padding:16px}.field-grid{grid-template-columns:1fr}.toast{bottom:72px}}
+/* Local activity recording and storage status */
+.local-save-bar{border:1px solid #e2e9d7;background:#f1f6e8;border-radius:10px;margin:0 0 11px;padding:7px 11px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:10px;color:#56754b}
+.local-save-bar button{font-weight:800;color:#56754b;padding:2px 0;white-space:nowrap}.local-save-bar .bad{color:#a14429}
+.storage-info{margin:0 10px 6px;padding:7px 8px;border-radius:8px;background:#f0f5e8;color:#5f8056;font-size:10px;font-weight:700}
+.activity-profile{display:flex;align-items:center;gap:12px;padding:12px;background:#fff5d4;border-radius:12px}.activity-profile strong{font-size:15px}
+.activity-tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:15px 0}.activity-tile{display:grid;justify-items:center;gap:4px;background:#f7f4ea;border:1px solid #eadfc8;border-radius:12px;padding:13px 6px;color:#795439}.activity-tile:hover{background:#ffe598}.activity-tile strong{font-size:22px;line-height:1.2}.activity-tile span{font-size:11px}
+.activity-row{display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:10px 0;border-bottom:1px solid var(--line)}.activity-row:hover{background:#faf6eb}.activity-icon{width:32px;height:32px;background:#fff0bc;border-radius:50%;display:grid;place-items:center;flex-shrink:0;color:#9b7041}.activity-caption{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}.activity-caption strong{font-size:12px;color:#795439}.activity-caption span{font-size:12px;overflow-wrap:anywhere}.activity-caption small{font-size:11px;color:var(--muted);overflow-wrap:anywhere}.activity-row time{font-size:10px;color:var(--muted);max-width:110px;text-align:right} 
+@media(max-width:600px){.activity-tiles{grid-template-columns:repeat(2,1fr)}.local-save-bar{font-size:9px}.activity-row time{max-width:72px}}
+</style>
+</head>
+<body>
+<!-- Local icon sprite. No external dependencies. -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+<symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10H3z"/><path d="M9 20v-7h6v7"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.2 8.2 0 0 1-3.7-.85L3 21l1.85-5.8A8.5 8.5 0 1 1 21 11.5Z"/><path d="M8 11h.01m4 0h.01m4 0h.01"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9 9a3 3 0 1 1 4 2.8c-1 .4-1 1.2-1 2.2m0 3h.01"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6m-5 3h4m-5-6c0-2-3-3-3-7a6 6 0 0 1 12 0c0 4-3 5-3 7z"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 8.5c0 4-8.8 9.4-8.8 9.4S3.2 12.5 3.2 8.5a4.5 4.5 0 0 1 8.8-1.4 4.5 4.5 0 0 1 8.8 1.4z"/></symbol>
+<symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6 4h12v16l-6-4-6 4z"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0v5l-2 3h16l-2-3zM10 20h4"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-pen" viewBox="0 0 24 24"><path d="m15 5 4 4M5 19l5-1 9-9-4-4-9 9z"/></symbol>
+<symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 3c1 5 7 6 7 12a7 7 0 1 1-14 0c0-3 2-6 4-7 0 3 2 4 3 4 2-3 0-6 0-9z"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+<symbol id="i-data" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 4 16 4 16 0V6M4 12c0 4 16 4 16 0"/></symbol>
+</svg>
+<header class="header">
+ <div class="header-inner">
+  <button class="brand" data-filter="all" aria-label="집톡 홈">
+   <div class="brand-mark"><svg viewBox="0 0 38 38" width="32" height="32"><path d="M6 18 19 7 32 18v13H6Z" fill="#fff8db" stroke="#67462e" stroke-width="1.8"/><path d="M3 18 19 4l16 14" fill="#ee946f" stroke="#67462e" stroke-width="1.8" stroke-linejoin="round"/><circle cx="14.5" cy="21" r="1.5" fill="#67462e"/><circle cx="23.5" cy="21" r="1.5" fill="#67462e"/><path d="M17 25q2 3 4 0" stroke="#67462e" fill="none" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+   <div><div class="brand-name">집톡!</div><div class="brand-sub">JIPTOK CLUB</div></div>
+  </button>
+  <nav class="top-nav" aria-label="상단 메뉴"><button data-filter="free">자유게시판</button><button data-filter="q">고민 상담</button><button data-filter="solved">해결 후기</button></nav>
+  <div class="head-right">
+   <label class="search"><svg class="icon"><use href="#i-search"/></svg><input id="search" aria-label="게시글 검색" placeholder="궁금한 자취 이야기 검색"></label>
+   <button class="head-icon" id="notifications" title="알림"><svg class="icon"><use href="#i-bell"/></svg></button>
+   <button class="avatar" data-activity title="내 활동 기록" aria-label="내 활동 기록"><svg class="icon"><use href="#i-user"/></svg></button>
+  </div>
+ </div>
+</header>
+<main class="wrap">
+ <div class="intro"><span>COLLEGE LIFE · HOME · TOGETHER</span><span class="tag">디자인 초안 v2 · 로컬 기록</span></div>
+ <section class="hero" aria-label="집톡 소개">
+  <div class="hero-text">
+   <span class="eyebrow">BUTTER CLUB</span>
+   <h1>우리들의<br>자취 이야기</h1>
+   <p>처음이라 서툴러도 괜찮아.<br>고민부터 보증금 해결 후기까지, 집톡에서 함께 나눠요!</p>
+   <button class="primary" data-write><svg class="icon"><use href="#i-pen"/></svg> 지금 글쓰기 <svg class="icon"><use href="#i-chevron"/></svg></button>
+  </div>
+  <svg class="hero-art" viewBox="0 0 600 270" xmlns="http://www.w3.org/2000/svg" aria-label="웃고 있는 집톡 캐릭터 일러스트">
+    <defs><pattern id="dots" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".6" fill="#a87a3c" opacity=".12"/></pattern></defs>
+    <circle cx="405" cy="73" r="37" fill="#fff0bd" opacity=".8"/>
+    <path d="M0 245 Q120 202 220 234 T430 224 T600 216 V270 H0Z" fill="#ddde9e"/>
+    <path d="M0 261 Q130 229 300 251 T600 237 V270 H0Z" fill="#c5d4a0"/>
+    <g stroke="#96734a" stroke-width="2.7" stroke-linejoin="round">
+      <path d="M478 152 L526 118 575 152 V229 H478Z" fill="#f9e5bc"/><path d="M468 156 526 110 585 156" fill="#e6af77"/>
+      <rect x="491" y="164" width="18" height="23" rx="3" fill="#f8f6d8"/><rect x="548" y="165" width="16" height="21" rx="3" fill="#f8f6d8"/>
+      <rect x="521" y="188" width="23" height="41" rx="4" fill="#c79a78"/>
+      <path d="M526 110V85l23 8-23 8" fill="#dc8060"/>
+    </g>
+    <g stroke="#6f7350" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M457 222v-46" fill="none"/><path d="M436 193c-17-13-8-27 6-32-4-14 11-26 24-17 14-7 28 6 23 20 13 12 7 27-5 30-13 9-36 10-48-1z" fill="#aabc80"/>
+      <path d="M580 231V180" fill="none"/><path d="M567 197c-18-5-20-25-7-35-1-18 18-28 29-15 14-2 23 10 18 24 12 16 1 30-17 29z" fill="#a6b97b"/>
+      <path d="M16 245Q14 229 37 232Q35 206 57 213Q75 199 85 221Q113 218 116 244" fill="#bec78b"/>
+    </g>
+    <g stroke="#9a794f" fill="#fff7da" stroke-width="2.5"><path d="M100 75c-4-11 9-18 20-12 6-17 27-21 39-5 17-5 28 7 20 18z"/><path d="M470 49c-3-9 8-16 18-12 6-15 25-16 33-3 14-3 24 2 24 15z"/></g>
+    <g fill="none" stroke="#65442f" stroke-width="3.8" stroke-linecap="round"><path d="M140 105l-10-13M161 90l-3-15M125 128l-18-3"/></g>
+    <!-- Main Jiptok character: rounded limbs attached behind the body -->
+    <g stroke="#70472c" stroke-linejoin="round" stroke-linecap="round" stroke-width="4.1">
+      <ellipse cx="303" cy="253" rx="114" ry="8" fill="#95a66e" opacity=".2" stroke="none"/>
+      <!-- left arm, waving: closed, smooth mitten silhouette -->
+      <path d="M205 187 C188 187 176 179 169 165 L160 146 C156 138 145 139 143 147 C139 160 147 183 158 194 C170 205 188 207 205 203Z" fill="#fff0c7"/>
+      <path d="M146 154 Q150 151 154 160" fill="none" stroke-width="2.5"/>
+      <!-- right arm, relaxed -->
+      <path d="M401 181 C420 179 432 187 437 199 C441 208 435 215 428 213 C419 211 416 202 403 200Z" fill="#fff0c7"/>
+      <!-- short legs and feet; behind body -->
+      <path d="M225 229 H249 V244 C249 250 244 254 234 254 H219 C209 254 206 248 212 242 L225 236Z" fill="#fff0c7"/>
+      <path d="M359 229 H383 V236 L396 242 C402 248 399 254 389 254 H374 C364 254 359 250 359 244Z" fill="#fff0c7"/>
+      <!-- main body -->
+      <path d="M200 134L302 54l105 80V230q0 7-7 7H207q-7 0-7-7Z" fill="#fff0c7"/>
+      <path d="M373 87V48q0-5 5-3l25 8v55" fill="#edac78"/>
+      <path d="M181 137 301 43 425 136q5 8-2 13t-15-1L301 68 193 150q-11 5-14-5z" fill="#f0aa77"/>
+      <ellipse cx="270" cy="161" rx="7" ry="9" fill="#63412b" stroke="none"/>
+      <ellipse cx="337" cy="161" rx="7" ry="9" fill="#63412b" stroke="none"/>
+      <ellipse cx="252" cy="178" rx="15" ry="10" fill="#f2b196" stroke="none"/>
+      <ellipse cx="354" cy="178" rx="15" ry="10" fill="#f2b196" stroke="none"/>
+      <path d="M291 172q12 19 24 0" fill="none" stroke="#63412b" stroke-width="4"/>
+    </g>
+    <g fill="#f5d269" stroke="#9f7949" stroke-width="1.8"><path d="M181 64l5 11 12 2-9 8 2 12-10-6-10 6 2-12-9-8 12-2z"/><path d="M440 105l3 7 8 2-7 5 1 8-7-4-7 4 2-8-6-5 8-2z"/></g>
+  </svg>
+ </section>
+ <div class="layout">
+  <aside class="panel sidebar" aria-label="게시판 메뉴">
+   <div class="side-label">커뮤니티</div>
+   <button class="nav-item active" data-filter="all"><svg class="icon"><use href="#i-home"/></svg>전체 게시글</button>
+   <button class="nav-item" data-filter="free"><svg class="icon"><use href="#i-chat"/></svg>자유게시판</button>
+   <button class="nav-item" data-filter="q"><svg class="icon"><use href="#i-help"/></svg>고민 상담</button>
+   <button class="nav-item" data-filter="solved"><svg class="icon"><use href="#i-check"/></svg>해결 후기</button>
+   <button class="nav-item" data-filter="tip"><svg class="icon"><use href="#i-bulb"/></svg>자취 꿀팁</button>
+   <div class="side-divider"></div><div class="side-label">나의 집톡</div>
+   <button class="nav-item" data-filter="popular"><svg class="icon"><use href="#i-fire"/></svg>인기글</button>
+   <button class="nav-item" data-activity><svg class="icon"><use href="#i-user"/></svg>내 활동 기록</button>
+   <button class="nav-item" data-filter="mine"><svg class="icon"><use href="#i-pen"/></svg>내가 쓴 글</button>
+   <button class="nav-item" data-filter="commented"><svg class="icon"><use href="#i-chat"/></svg>댓글 단 글</button>
+   <button class="nav-item" data-filter="liked"><svg class="icon"><use href="#i-heart"/></svg>좋아요한 글</button>
+   <button class="nav-item" data-filter="saved"><svg class="icon"><use href="#i-bookmark"/></svg>저장한 글</button>
+   <div class="side-divider"></div>
+   <div class="side-foot">💛 서로의 경험을 존중하며<br>따뜻한 집톡을 만들어요.</div><div class="storage-info" id="storage-side">저장 상태 확인 중</div>
+  </aside>
+  <section class="feed">
+   <div class="feed-heading"><div><h2 id="feed-title">오늘의 집톡</h2><small id="feed-sub">자취생들의 솔직한 이야기, 지금 만나보세요.</small></div><button class="primary" data-write><svg class="icon"><use href="#i-plus"/></svg> 글쓰기</button></div>
+   <div class="panel composer"><span class="avatar"><svg class="icon"><use href="#i-user"/></svg></span><button data-write>오늘 자취하면서 무슨 일이 있었나요?</button></div>
+   <div class="filters" id="filters"><button class="chip active" data-filter="all">전체</button><button class="chip" data-filter="free">자유수다</button><button class="chip" data-filter="q">고민 상담</button><button class="chip" data-filter="solved">해결 후기</button><button class="chip" data-filter="tip">꿀팁</button><label class="sort"><select id="sort" aria-label="정렬 방식"><option value="latest">최신순</option><option value="popular">인기순</option></select></label></div>
+   <div class="local-save-bar"><span id="storage-status" role="status">저장 상태 확인 중</span><button data-activity>내 활동 기록 →</button></div><div class="posts" id="posts" aria-live="polite"></div>
+  </section>
+  <aside class="right">
+   <section class="feature">
+    <div class="feature-kicker">✷ 오늘의 해결 후기</div>
+    <h3>내 경험이 누군가의<br>보증금을 지켜줘요.</h3>
+    <p id="featured-title">도배비를 요구받았지만, 입주 사진으로 해결했어요!</p>
+    <div class="amounts"><div><div class="small">최초 요구</div><strong id="featured-claim">20만원</strong></div><div class="arrow">→</div><div><div class="small">실제 부담</div><strong class="good" id="featured-paid">0원</strong></div></div>
+    <button class="full-green" id="featured-open">자세한 후기 보기 <svg class="icon"><use href="#i-chevron"/></svg></button>
+   </section>
+   <section class="panel right-panel"><h3>🔥 지금 뜨는 이야기</h3><div id="popular-list"></div></section>
+   <section class="notice"><strong>✷ 전에 올린 고민이 해결됐나요?</strong><p>최종 결과를 남겨 다른 자취생에게 경험을 공유해 주세요.</p><button data-filter="mine">내가 쓴 글에서 후기 남기기 →</button></section>
+  </aside>
+ </div>
+ <footer class="footer"><span>© 2026 집톡! · 초기 게시글은 시연용 가상 예시입니다. 활동 기록은 현재 브라우저에 저장됩니다.</span><button id="data-preview"><svg class="icon" style="width:13px;height:13px"><use href="#i-data"/></svg> 연구용 데이터 구조 미리보기</button></footer>
+</main>
+<nav class="mobile-nav" aria-label="모바일 메뉴"><button data-filter="all" class="active"><svg class="icon"><use href="#i-home"/></svg>홈</button><button data-filter="q"><svg class="icon"><use href="#i-help"/></svg>고민</button><button data-write><svg class="icon"><use href="#i-plus"/></svg>글쓰기</button><button data-filter="solved"><svg class="icon"><use href="#i-check"/></svg>해결 후기</button><button data-activity><svg class="icon"><use href="#i-user"/></svg>내 활동</button></nav>
+<dialog id="modal"><div class="dialog-head"><h2 id="dialog-title">게시글</h2><button class="close" id="close-modal" aria-label="닫기"><svg class="icon"><use href="#i-x"/></svg></button></div><div class="dialog-body" id="dialog-body"></div></dialog>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const icon = n => '<svg class="icon" aria-hidden="true"><use href="#i-'+n+'"/></svg>';
+const $ = s => document.querySelector(s);
+const esc = value => String(value ?? '').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const types = {free:'자유',q:'고민',solved:'해결 후기',tip:'꿀팁'};
+const names = {all:'오늘의 집톡',free:'자유게시판',q:'고민 상담',solved:'해결 후기',tip:'자취 꿀팁',popular:'인기 게시글',mine:'내가 쓴 글',saved:'저장한 글',commented:'댓글 단 글',liked:'좋아요한 글'};
+const now=Date.now(), min=60000, hour=60*min;
+const seeds = [
+{id:'s1',category:'free',title:'드디어 자취 시작! 첫 자취방 꾸미기 어때요? 🏡',body:'학교 근처 원룸으로 이사했어요. 책상, 침대부터 차근차근 꾸미고 있는데 다들 자취할 때 제일 유용했던 물건이 뭐였나요?',author:'새내기자취러',time:now-14*min,likes:36,comments:[{author:'집순이',body:'콘센트 많은 멀티탭이랑 건조대 추천해요!',time:now-4*min},{author:'자취3년차',body:'입주 당일 집 상태도 사진으로 남겨두세요.',time:now-3*min}],color:'#f9d69f'},
+{id:'s2',category:'q',title:'퇴실할 때 원상복구 어디까지 해야 할까요? ㅠㅠ',body:'1년 정도 살았는데 집주인이 벽지 얼룩을 이유로 도배비 20만 원을 보증금에서 빼겠대요. 입주할 때 찍은 사진이 있기는 해요. 비슷한 경험 있는 분 계실까요?',author:'보증금지켜',time:now-36*min,likes:24,owned:true,demoOwned:true,case:{type:'벽지·도배',claim:200000,paid:null,clause:'모름',cause:'불명',evidence:'사진 있음',outcome:'O4',confirmed:false,consent:false},comments:[{author:'자취선배',body:'입주 사진에서 얼룩이 보이는지 먼저 확인해 보세요.',time:now-20*min},{author:'초코우유',body:'집주인에게 연락한 기록도 남겨두면 좋을 것 같아요.',time:now-9*min}],color:'#e2d9f1'},
+{id:'s3',category:'solved',title:'도배비 20만 원 요구받았는데, 결국 0원으로 해결했어요!',body:'퇴실할 때 벽지 자국 때문에 도배비 20만 원을 요구받았어요. 입주 당일 사진을 보여 주고 이전부터 있던 얼룩이라고 설명했더니, 집주인이 공제하지 않았고 보증금 전액을 받았습니다.',author:'자취3년차',time:now-2*hour,likes:72,case:{type:'벽지·도배',claim:200000,paid:0,clause:'없음',cause:'노후·기존 손상',evidence:'사진 있음',outcome:'O3',confirmed:true,consent:true,resolution:'입주 사진을 근거로 기존 얼룩을 설명하고 보증금 전액을 돌려받음.'},comments:[{author:'새내기자취러',body:'사진 정말 중요하네요!',time:now-50*min},{author:'집순이',body:'좋은 후기 감사해요.',time:now-25*min}],color:'#cfe3c4'},
+{id:'s4',category:'free',title:'학교 근처 자취방 시세 요즘 어떤가요?',body:'다음 학기에 자취를 시작하려고 해요. 학교에서 걸어서 다닐 수 있는 거리면 좋겠는데, 다들 월세랑 관리비를 어느 정도 내나요?',author:'캠퍼스하우스',time:now-3*hour,likes:18,comments:[{author:'익명',body:'거리에 따라 차이가 크더라고요. 관리비에 어떤 항목이 있는지도 꼭 확인하세요.',time:now-2*hour}],color:'#f9dfb1'},
+{id:'s5',category:'q',title:'빌트인 세탁기가 고장 났는데 제가 고쳐야 하나요?',body:'이사 왔을 때부터 있던 세탁기가 갑자기 멈췄어요. 몇 년 된 건지는 모르겠고 집주인께 먼저 연락 드렸습니다. 기다려야 할까요?',author:'세탁기초보',time:now-5*hour,likes:31,case:{type:'빌트인 가전·가구',claim:null,paid:null,clause:'모름',cause:'불명',evidence:'문자 있음',outcome:'O4',confirmed:false,consent:false},comments:[{author:'자취선배',body:'고장 증상과 집주인에게 알린 날짜를 기록해 두세요.',time:now-4*hour}],color:'#d8e4f7'},
+{id:'s6',category:'tip',title:'입주 첫날 꼭 찍어두면 좋은 사진 체크리스트',body:'벽지, 장판, 창문, 욕실, 빌트인 가전까지 입주 당일의 상태를 기록해두면 나중에 설명할 때 도움이 될 수 있어요. 날짜가 기록된 원본도 잘 보관해 주세요.',author:'살림하는대학생',time:now-8*hour,likes:49,comments:[],color:'#ffedb6'}
+];
+const STORE='jiptok-butter-v2';
+let posts=seeds, filter='all', query='', sort='latest', liked=new Set(), saved=new Set(), activity=[], storageOK=false, savedAt=null;
+try{
+ const snapshot=JSON.parse(localStorage.getItem(STORE)||'null');
+ if(snapshot&&Array.isArray(snapshot.posts)){
+   posts=snapshot.posts;liked=new Set(snapshot.liked||[]);saved=new Set(snapshot.saved||[]);activity=Array.isArray(snapshot.activity)?snapshot.activity:[];savedAt=snapshot.savedAt||null;
+ }else{
+   const previous=JSON.parse(localStorage.getItem('jiptok-butter-v1')||'null');
+   if(Array.isArray(previous))posts=previous;
+   liked=new Set(JSON.parse(localStorage.getItem('jiptok-likes')||'[]'));saved=new Set(JSON.parse(localStorage.getItem('jiptok-saved')||'[]'));
+ }
+ posts.forEach(p=>{if(p.id==='s2')p.demoOwned=true;(p.comments||[]).forEach(c=>{if(c.author==='익명 자취생'&&!('owned' in c))c.owned=true})});
+ storageOK=true;
+}catch{}
+function snapshot(){return {version:2,posts,liked:[...liked],saved:[...saved],activity,savedAt}}
+function record(kind,p,content=''){activity.unshift({kind,postId:p.id,title:p.title,content,time:Date.now()})}
+function persist(){
+ try{savedAt=Date.now();localStorage.setItem(STORE,JSON.stringify(snapshot()));storageOK=true}
+ catch{storageOK=false;savedAt=null}
+ updateStorage();
+ return storageOK;
+}
+function actualTime(t){return t?new Date(t).toLocaleString('ko-KR',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'}):'아직 없음'}
+function updateStorage(){
+ const text=storageOK?(savedAt?'✓ 브라우저에 저장됨 · '+actualTime(savedAt):'✓ 로컬 저장 가능'):'⚠ 브라우저 저장 불가 · 화면을 닫기 전 백업 필요';
+ const el=$('#storage-status');el.textContent=text;el.classList.toggle('bad',!storageOK);$('#storage-side').textContent=storageOK?'✓ 이 브라우저에 활동 저장':'⚠ 저장 불가';
+}
+function savedToast(success){toast(storageOK?success:'현재 화면에 반영했지만 저장하지 못했어요. 내 활동에서 백업해 주세요.')}
+function money(v,compact=false){if(v===null||v===undefined||v==='')return '미확인';let n=Number(v);return compact&&n>0&&n%10000===0?(n/10000)+'만원':n.toLocaleString('ko-KR')+'원'}
+function when(t){const m=Math.max(0,Math.floor((Date.now()-t)/60000));return m<1?'방금 전':m<60?m+'분 전':m<1440?Math.floor(m/60)+'시간 전':Math.floor(m/1440)+'일 전'}
+function avatar(color){return '<span class="small-avatar" style="background:'+color+'">'+icon('user')+'</span>'}
+function label(post){return '<span class="label '+esc(post.category)+'">'+esc(types[post.category])+'</span>'}
+function status(post){return post.case?'<span class="label status '+(post.case.confirmed?'done':'pending')+'">'+(post.case.confirmed?'해결 완료':'진행 중')+'</span>':''}
+function render(){
+ let items=posts.filter(p=>filter==='all'||filter==='popular'||(filter==='mine'?p.owned:filter==='saved'?saved.has(p.id):filter==='liked'?liked.has(p.id):filter==='commented'?p.comments.some(c=>c.owned):p.category===filter));
+ if(query){let q=query.toLowerCase();items=items.filter(p=>(p.title+' '+p.body+' '+(p.case?.type||'')).toLowerCase().includes(q))}
+ items.sort((a,b)=>filter==='popular'||sort==='popular'?(b.likes-a.likes):(b.time-a.time));
+ $('#feed-title').textContent=query?'검색 결과':names[filter];
+ $('#feed-sub').textContent=query?'“'+query+'” 검색 · '+items.length+'건':filter==='mine'?'내가 작성한 글을 확인하고 해결 후기를 남겨 보세요. 시연용 글 1개가 포함됩니다.':filter==='all'?'자취생들의 솔직한 이야기, 지금 만나보세요.':items.length+'개의 이야기';
+ document.querySelectorAll('[data-filter]').forEach(b=>{if(b.classList.contains('brand'))return;b.classList.toggle('active',b.dataset.filter===filter)});
+ $('#posts').innerHTML=items.length?items.map(p=>'<article class="panel post"><div class="post-head">'+avatar(p.color||'#ffedb6')+'<div><div class="author">'+esc(p.author)+(p.demoOwned?' · 시연용 내 글':p.owned?' · 내 글':'')+'</div><div class="meta">'+when(p.time)+'</div></div>'+label(p)+status(p)+'</div><button class="post-main" data-open="'+esc(p.id)+'"><h3 class="post-title">'+esc(p.title)+'</h3><p class="post-body">'+esc(p.body)+'</p></button>'+(p.case?.confirmed?'<div class="case-summary"><span>최초 요구 <b>'+money(p.case.claim,true)+'</b></span><span class="arrow">→</span><span>실제 부담 <strong>'+money(p.case.paid,true)+'</strong></span></div>':'')+'<div class="post-actions"><button class="action '+(liked.has(p.id)?'liked':'')+'" data-like="'+esc(p.id)+'" aria-label="좋아요">'+icon('heart')+' '+p.likes+'</button><button class="action" data-open="'+esc(p.id)+'">'+icon('chat')+' 댓글 '+p.comments.length+'</button><button class="action bookmark '+(saved.has(p.id)?'saved':'')+'" data-save="'+esc(p.id)+'" aria-label="게시글 저장">'+icon('bookmark')+'</button></div></article>').join(''):'<div class="panel empty">아직 이곳에 게시글이 없어요.<br>첫 이야기를 남겨 봐요!</div>';
+ const featured=posts.find(p=>p.case?.confirmed&&p.case.claim!=null&&p.case.paid!=null);
+ if(featured){$('#featured-title').textContent=featured.title;$('#featured-claim').textContent=money(featured.case.claim,true);$('#featured-paid').textContent=money(featured.case.paid,true);$('#featured-open').dataset.open=featured.id}
+ $('#popular-list').innerHTML=[...posts].sort((a,b)=>b.likes-a.likes).slice(0,4).map((p,i)=>'<button class="popular" data-open="'+esc(p.id)+'"><span class="rank">'+(i+1)+'</span><span><span class="p-title">'+esc(p.title)+'</span><span class="p-meta">♡ '+p.likes+' · 댓글 '+p.comments.length+'</span></span></button>').join('');
+}
+function setFilter(f){filter=f;query='';$('#search').value='';sort='latest';$('#sort').value='latest';render();if(window.innerWidth<600)window.scrollTo({top:0,behavior:'smooth'})}
+function toast(msg){const el=$('#toast');el.textContent=msg;el.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>el.classList.remove('show'),2200)}
+const modal=$('#modal');
+function show(title,html){$('#dialog-title').textContent=title;$('#dialog-body').innerHTML=html;if(!modal.open)modal.showModal();modal.scrollTop=0}
+function close(){modal.close()}
+$('#close-modal').addEventListener('click',close);
+modal.addEventListener('click',e=>{if(e.target===modal){let b=modal.getBoundingClientRect();if(e.clientX<b.left||e.clientX>b.right||e.clientY<b.top||e.clientY>b.bottom)close()}})
+function find(id){return posts.find(p=>p.id===id)}
+function toggleLike(id){let p=find(id);if(!p)return;if(liked.has(id)){liked.delete(id);p.likes=Math.max(p.likes-1,0);record('unlike',p)}else{liked.add(id);p.likes++;record('like',p)}persist();render();savedToast(liked.has(id)?'좋아요를 저장했어요.':'좋아요를 취소했어요.')}
+function toggleSave(id){let p=find(id);if(!p)return;if(saved.has(id)){saved.delete(id);record('unsave',p)}else{saved.add(id);record('save',p)}persist();render();savedToast(saved.has(id)?'저장한 글에 추가했어요.':'저장을 취소했어요.')}
+function detail(id){
+ let p=find(id);if(!p)return;let c=p.case;
+ show('집톡 이야기','<div class="post-head">'+avatar(p.color||'#ffedb6')+'<div><div class="author">'+esc(p.author)+(p.demoOwned?' · 시연용 내 글':p.owned?' · 내 글':'')+'</div><div class="meta">'+when(p.time)+'</div></div>'+label(p)+status(p)+'</div><h3>'+esc(p.title)+'</h3><p class="detail-body">'+esc(p.body)+'</p>'+(c?'<div class="detail-case"><h4>사례 정보 · 작성자 제공</h4>'+[['청구 항목',c.type],['최초 청구 금액',money(c.claim)],['특약',c.clause],['문제 원인',c.cause],['증거자료',c.evidence],['실제 부담 금액',money(c.paid)],['현재 결과',c.confirmed?'해결 완료':'진행 중·미확인']].map(([k,v])=>'<div class="kv"><span>'+esc(k)+'</span><strong>'+esc(v)+'</strong></div>').join('')+(c.resolution?'<p class="small-note">해결 과정: '+esc(c.resolution)+'</p>':'')+'</div>':'')+(p.owned&&c&&!c.confirmed?'<button class="full-green" data-result="'+esc(id)+'">'+icon('check')+' 해결 후기 남기기</button>':'')+'<p class="small-note">이 게시글은 경험 공유이며 법률 판단을 대신하지 않습니다.</p><h4 style="margin:19px 0 9px">댓글 '+p.comments.length+'</h4>'+p.comments.map((cm,i)=>'<div class="comment">'+avatar(i%2?'#f9d4c5':'#dcebd5')+'<div class="content"><div class="author">'+esc(cm.author)+' <span class="meta" style="font-weight:400">'+when(cm.time)+'</span></div><p>'+esc(cm.body)+'</p></div></div>').join('')+'<form class="comment-form" id="comment-form"><input name="comment" placeholder="따뜻한 댓글을 남겨 주세요" required maxlength="600" aria-label="댓글 내용"><button class="primary" type="submit">등록</button></form>');
+ $('#comment-form').addEventListener('submit',e=>{e.preventDefault();let value=new FormData(e.target).get('comment').trim();if(!value)return;p.comments.push({id:'c'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),author:'익명 자취생',body:value,time:Date.now(),owned:true});record('comment',p,value);persist();render();detail(id);savedToast('댓글을 등록하고 저장했어요.')});
+}
+const options=(values,chosen)=>values.map(v=>'<option '+(v===chosen?'selected':'')+'>'+esc(v)+'</option>').join('');
+function compose(){
+ show('새로운 이야기','<p class="demo-note">편하게 이야기를 남겨 주세요! 실제 주소나 연락처 등 개인정보는 입력하지 마세요.</p><form id="write-form"><div class="field"><label for="category">게시판</label><select id="category" name="category"><option value="free">자유게시판</option><option value="q">고민 상담</option><option value="solved">해결 후기</option><option value="tip">자취 꿀팁</option></select></div><div class="field"><label for="title-input">제목</label><input id="title-input" name="title" placeholder="어떤 이야기를 나눌까요?" maxlength="100" required></div><div class="field"><label for="body-input">내용</label><textarea id="body-input" name="body" placeholder="자취 경험과 고민을 자유롭게 적어 주세요." required maxlength="3000"></textarea></div><section class="case-fields" id="case-fields" hidden><h4>사례 정보 (선택)</h4><p class="sub">아는 정보만 입력하면 됩니다. 실제 결말을 모를 때는 비워 두세요.</p><div class="field-grid"><div class="field"><label>청구 항목</label><select name="type">'+options(['청소비','벽지·도배','곰팡이','빌트인 가전·가구','수리비','장판','기타','불명'],'불명')+'</select></div><div class="field"><label>최초 청구 금액 (원)</label><input name="claim" type="number" min="0" max="1000000000" step="1" placeholder="예: 200000"></div><div class="field"><label>계약서 특약</label><select name="clause">'+options(['모름','있음','없음'],'모름')+'</select></div><div class="field"><label>문제의 원인 (본인 진술)</label><select name="cause">'+options(['불명','노후·통상 사용','건물 구조','세입자 과실','노후·기존 손상','기타'],'불명')+'</select></div><div class="field"><label>증거자료</label><select name="evidence">'+options(['모름','없음','사진 있음','영상 있음','문자 있음','기타'],'모름')+'</select></div><div class="field" id="paid-field" hidden><label>실제 부담 금액 (원)</label><input type="number" name="paid" min="0" max="1000000000" step="1" placeholder="0원도 입력 가능"></div></div><label class="check" id="confirm-field" hidden><input type="checkbox" name="confirmed"> 돈이 실제로 지급·공제되었거나 부담하지 않는 것으로 확정되었습니다.</label><label class="check"><input type="checkbox" name="consent"> 개인정보를 제거한 사례를 연구·챗봇 사례 검색에 활용하는 데 동의합니다. (시연용)</label></section><div class="dialog-actions"><button type="button" class="secondary" data-close>취소</button><button class="primary" type="submit">게시글 등록</button></div></form>');
+ const cat=$('#category'),fields=$('#case-fields');cat.value=['q','solved','tip','free'].includes(filter)?filter:'free';
+ const mode=()=>{fields.hidden=!['q','solved'].includes(cat.value);$('#paid-field').hidden=cat.value!=='solved';$('#confirm-field').hidden=cat.value!=='solved'};
+ cat.addEventListener('change',mode);mode();
+ $('#write-form').addEventListener('submit',e=>{
+  e.preventDefault();let d=new FormData(e.target),ct=d.get('category'),title=d.get('title').trim(),body=d.get('body').trim();if(!title||!body){toast('제목과 내용을 입력해 주세요.');return}
+  let p={id:'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),category:ct,title,body,author:'익명 자취생',time:Date.now(),likes:0,comments:[],owned:true,color:'#ffedb6'};
+  if(['q','solved'].includes(ct)){let claim=d.get('claim')===''?null:Number(d.get('claim')),paid=d.get('paid')===''?null:Number(d.get('paid')),confirmed=ct==='solved'&&d.get('confirmed')==='on'&&paid!==null; if(ct==='solved'&&!confirmed){toast('해결 후기는 실제 부담 금액과 결과 확인이 필요해요.');return}if(confirmed&&claim===null){toast('최초 청구 금액을 입력해 주세요.');return}if(confirmed&&paid>claim){toast('실제 부담액은 청구액 이하로 입력해 주세요.');return}p.case={type:d.get('type'),claim,paid:confirmed?paid:null,clause:d.get('clause'),cause:d.get('cause'),evidence:d.get('evidence'),confirmed,consent:d.get('consent')==='on',outcome:confirmed?resultCode(claim,paid):'O4',resolution:confirmed?body:''}}
+  posts.unshift(p);record('post',p);persist();close();setFilter('all');savedToast('이야기를 등록하고 저장했어요!');
+ });
+}
+function resultCode(claim,paid){if(paid===0)return'O3';if(paid<claim)return'O2';return'O1'}
+function resolveForm(id){let p=find(id);if(!p?.owned||!p.case||p.case.confirmed)return;show('해결 후기 남기기','<p class="demo-note">실제로 지급·공제되었거나 부담하지 않는 것으로 확정된 결과만 등록해 주세요.</p><h3 style="font-size:18px">'+esc(p.title)+'</h3><form id="resolve-form"><div class="field-grid"><div class="field"><label>최초 청구 금액 (원)</label><input required name="claim" type="number" step="1" min="0" max="1000000000" value="'+esc(p.case.claim??'')+'"></div><div class="field"><label>실제 부담 금액 (원)</label><input required name="paid" type="number" step="1" min="0" max="1000000000" placeholder="예: 0"></div></div><div class="field" style="margin-top:14px"><label>어떻게 해결했나요?</label><textarea name="resolution" required placeholder="해결 과정과 도움이 된 증거를 알려 주세요." maxlength="2000"></textarea></div><label class="check"><input type="checkbox" name="confirmed" required> 실제 부담 금액이 최종 확정되었음을 확인합니다.</label><label class="check"><input type="checkbox" name="consent" '+(p.case.consent?'checked':'')+'> 개인정보 제거 후 연구·챗봇 사례 검색 활용에 동의합니다. (시연용)</label><div class="dialog-actions"><button class="secondary" type="button" data-open="'+esc(id)+'">돌아가기</button><button class="primary">후기 등록</button></div></form>');
+ $('#resolve-form').addEventListener('submit',e=>{e.preventDefault();let d=new FormData(e.target),claim=Number(d.get('claim')),paid=Number(d.get('paid')),res=d.get('resolution').trim();if(paid>claim){toast('실제 부담액은 청구액 이하로 입력해 주세요.');return}if(!res){toast('해결 과정을 작성해 주세요.');return}Object.assign(p.case,{claim,paid,resolution:res,confirmed:true,outcome:resultCode(claim,paid),consent:d.get('consent')==='on'});p.category='solved';p.body+='\n\n[작성자의 해결 후기]\n'+res;p.updatedAt=Date.now();record('resolve',p);persist();render();detail(id);savedToast('해결 후기를 등록하고 저장했어요!')})
+}
+const activityLabels={post:'게시글 작성',comment:'댓글 작성',like:'좋아요',unlike:'좋아요 취소',save:'게시글 저장',unsave:'저장 취소',resolve:'해결 후기 등록'};
+const activityIcons={post:'pen',comment:'chat',like:'heart',unlike:'heart',save:'bookmark',unsave:'bookmark',resolve:'check'};
+function activityView(){
+ const myPosts=posts.filter(p=>p.owned&&!p.demoOwned), myComments=posts.flatMap(p=>p.comments.filter(c=>c.owned).map(c=>({p,c})));
+ const tiles=[['내 글',myPosts.length,'mine','pen'],['내 댓글',myComments.length,'commented','chat'],['좋아요',liked.size,'liked','heart'],['저장한 글',saved.size,'saved','bookmark']];
+ show('내 활동 기록','<div class="activity-profile"><span class="avatar">'+icon('user')+'</span><div><strong>익명 자취생</strong><div class="meta">이 브라우저의 로컬 활동 기록</div></div></div><p class="small-note">'+esc(storageOK?'✓ 기록을 저장할 수 있습니다. 마지막 저장: '+actualTime(savedAt):'⚠ 브라우저 저장을 사용할 수 없습니다. 파일 백업을 이용해 주세요.')+'</p><div class="activity-tiles">'+tiles.map(([name,n,filter,ico])=>'<button type="button" class="activity-tile" data-filter="'+filter+'">'+icon(ico)+'<strong>'+n+'</strong><span>'+name+'</span></button>').join('')+'</div><h4 style="margin:20px 0 5px">최근 활동</h4>'+(activity.length?'<div class="activity-list">'+activity.slice(0,30).map(a=>'<button data-open="'+esc(a.postId)+'" class="activity-row"><span class="activity-icon">'+icon(activityIcons[a.kind]||'chat')+'</span><span class="activity-caption"><strong>'+esc(activityLabels[a.kind]||a.kind)+'</strong><span>'+esc(a.title)+'</span>'+(a.content?'<small>'+esc(a.content)+'</small>':'')+'</span><time>'+esc(actualTime(a.time))+'</time></button>').join('')+'</div>':'<div class="empty" style="background:#faf7ed;border-radius:12px;padding:23px">아직 활동 기록이 없어요. 글이나 댓글을 남기거나 하트를 눌러 보세요.</div>')+'<p class="small-note">초기 시연용 게시글은 작성 수에 포함하지 않아요. 현재 HTML은 다른 기기 또는 대학생과 기록을 공유하지 않습니다.</p><button id="backup-activity" class="secondary" style="width:100%">'+icon('data')+' 내 활동 데이터 백업 (JSON)</button><p class="small-note">백업에는 이 브라우저에서 작성한 내용과 활동 기록이 포함됩니다. 개인정보가 포함되었는지 확인하고 본인만 보관하세요.</p>');
+ $('#backup-activity').addEventListener('click',()=>{const data={version:2,savedAt,posts:myPosts,comments:myComments.map(({p,c})=>({postId:p.id,postTitle:p.title,...c})),liked:[...liked].map(id=>({id,title:find(id)?.title||''})),saved:[...saved].map(id=>({id,title:find(id)?.title||''})),activity};downloadJson(data,'jiptok_my_activity.json')});
+}
+function downloadJson(data,filename){let url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),500)}
+function dataPreview(){
+ const cases=posts.filter(p=>p.case?.consent).map(p=>({case_id:p.id,category:p.case.type,claim_krw:p.case.claim,paid_krw:p.case.paid,special_clause:p.case.clause,reported_cause:p.case.cause,evidence:p.case.evidence,outcome:p.case.outcome,confirmed:p.case.confirmed,source:'demo_author_input',review_status:'unreviewed',demo_only:true}));
+ show('연구용 데이터 미리보기','<p class="demo-note">이 화면은 MCP 연동을 위한 데이터 구조 예시입니다. 실제 서버·AI·MCP 연결은 아직 없으며, 동의한 시연용 사례만 표시합니다. 자유 입력 원문과 개인정보는 내보내지 않습니다.</p><p><b>'+cases.length+'건</b>의 사례를 확인할 수 있어요.</p><pre style="padding:14px;background:#f5efe3;border:1px solid #e9decd;border-radius:12px;overflow:auto;font-size:11px;white-space:pre-wrap;overflow-wrap:anywhere">'+esc(JSON.stringify(cases,null,2))+'</pre><div class="dialog-actions"><button class="secondary" data-close>닫기</button><button id="export-json" class="primary">시연용 JSON 내려받기</button></div>');
+ $('#export-json').addEventListener('click',()=>{let url=URL.createObjectURL(new Blob([JSON.stringify(cases,null,2)],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='jiptok_demo_cases.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),500)})
+}
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;if(b.hasAttribute('data-write')){compose();return}if(b.hasAttribute('data-activity')){activityView();return}if(b.dataset.filter){if(modal.open)close();setFilter(b.dataset.filter);return}if(b.dataset.open){detail(b.dataset.open);return}if(b.dataset.like){toggleLike(b.dataset.like);return}if(b.dataset.save){toggleSave(b.dataset.save);return}if(b.dataset.result){resolveForm(b.dataset.result);return}if(b.hasAttribute('data-close'))close()});
+$('#search').addEventListener('input',e=>{query=e.target.value.trim();filter='all';render()});$('#sort').addEventListener('change',e=>{sort=e.target.value;render()});$('#notifications').addEventListener('click',()=>{show('내 알림','<div class="notice"><strong>💛 전에 올린 고민의 결과를 알려 주세요.</strong><p>내가 쓴 글을 열어 해결 후기를 남길 수 있어요. 아직 실제 알림 서비스는 연결되지 않았습니다.</p><button id="my-posts-notice">내가 쓴 글 보기 →</button></div>');$('#my-posts-notice').addEventListener('click',()=>{close();setFilter('mine')})});
+$('#data-preview').addEventListener('click',dataPreview);
+persist();render();
+</script>
+</body>
+</html>
